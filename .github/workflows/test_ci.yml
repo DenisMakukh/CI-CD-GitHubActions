@@ -12,7 +12,7 @@ jobs:
       - name   : Git-Clone-my-repo
         uses   : actions/checkout@v3
       - run    : |
-         git clone https://github.com/DenisMakukh/tp-hse-2022-hw2.git
+         cd $GITHUB_WORKSPACE
          python3 -m unittest test_tz2.Tests
          
         
