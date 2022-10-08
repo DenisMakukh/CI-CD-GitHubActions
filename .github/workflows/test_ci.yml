@@ -1,0 +1,22 @@
+name: my-tests
+
+
+on:
+  push:
+    branches:
+      -master
+      
+jobs:
+  test_my_code:
+    runs-on   : ubuntu-latest
+    steps     :
+      - name   : Git-Clone-my-repo
+        uses   : actions/checkout@v2
+      - run    : |
+         git clone https://github.com/DenisMakukh/tp-hse-2022-hw2.git
+         python3 -m unittest test_tz2.Tests
+         
+        
+        
+      
+    
