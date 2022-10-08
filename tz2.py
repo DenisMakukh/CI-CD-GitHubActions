@@ -1,10 +1,10 @@
 import datetime
 
-filename1 = input() # создание массива из файла1
-file1 = open(filename1,'r')
-for line in file1:
+filename = input()
+file = open(filename,'r')
+for line in file:
     sp = line.split()
-file1.close()
+file.close()
 sp1 = [int(i) for i in sp]
 print('Количество элементов в файле:', len(sp1))
 
