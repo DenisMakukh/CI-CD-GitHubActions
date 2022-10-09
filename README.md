@@ -6,6 +6,5 @@
 ##### Автор: Макух Денис Вадимович.
 ##### Группа: ББИ226
  
-
 Status of Last Deployment:<br>
 <img src ="https://github.com/DenisMakukh/tp-hse-2022-hw2/workflows/my-tests/badge.svg?branch=master"><br>
