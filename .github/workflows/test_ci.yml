@@ -14,18 +14,18 @@ jobs:
       - run    : |
          cd $GITHUB_WORKSPACE
          python3 -m unittest test_tz2
-      - name: send telegram message on push
+      - name: telegram bot
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ github.actor }} created commit:
-            Commit message: ${{ github.event.commits[0].message }}
+            ${{ github.actor }} создал коммит:
+            Сообщение коммита: ${{ github.event.commits[0].message }}
 
-            Repository: ${{ github.repository }}
+            Репозиторий: ${{ github.repository }}
 
-            See changes: https://github.com/$%7B%7B github.repository }}/commit/${{github.sha}}
+            Посмотреть изменения: https://github.com/$%7B%7B github.repository }}/commit/${{github.sha}}
          
         
         
