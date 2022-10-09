@@ -5,6 +5,7 @@
 #### Графики зависимости времени работы функций от количества чисел в файле: ![image](https://user-images.githubusercontent.com/114257585/194711279-b72b4905-e133-4573-a042-157251134415.png)
 ##### Автор: Макух Денис Вадимович.
 ##### Группа: ББИ226
-my-tests
+
+
 Status of Last Deployment:<br>
 <img src ="https://github.com/DenisMakukh/tp-hse-2022-hw2/workflows/my-tests/badge.svg?branch=master"><br>
