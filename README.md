@@ -12,5 +12,5 @@
 ##### Автор: Макух Денис Вадимович.
 ##### Группа: ББИ226
  
-Статус последнего тестирования:<br>
-<img src ="https://github.com/DenisMakukh/tp-hse-2022-hw2/workflows/my-tests/badge.svg?branch=master"><br>
+Статус последнего тестирования:
+[![YourActionName Actions Status](https://github.com/DenisMakukh/tp-hse-2022-hw2/workflows/my-tests/badge.svg)](https://github.com/DenisMakukh/tp-hse-2022-hw2/actions)
