@@ -1,6 +1,6 @@
 import datetime
 
-file = open(input(), 'r')
+file = open('array.txt', 'r')
 try:
     for line in file:
         sp = line.split()
