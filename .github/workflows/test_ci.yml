@@ -21,9 +21,9 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             ${{ github.actor }} создал коммит:
-            Сообщение коммита: ${{ github.event.commits[0].message }}
+            Были внесены изменения: ${{ github.event.commits[0].message }}
 
-            Репозиторий: ${{ github.repository }}
+            Изменения произошли в репозитории: ${{ github.repository }}
 
             Посмотреть изменения: https://github.com/$%7B%7B github.repository }}/commit/${{github.sha}}
          
