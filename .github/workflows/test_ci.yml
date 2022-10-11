@@ -43,6 +43,8 @@ jobs:
         Были внесены изменения: ${{ github.event.commits[0].message }}
 
         Изменения произошли в репозитории: ${{ github.repository }}
+        
+        СТАТУС ТЕСТА ПОСЛЕ КОММИТА: УСПЕШНО!
 
         Посмотреть изменения: https://github.com/${{ github.repository }}/commit/${{github.sha}}
  
