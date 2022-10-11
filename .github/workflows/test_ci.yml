@@ -3,7 +3,6 @@ name: my-tests
 
 on:
   push:
-    branches: ["master"]
   workflow_dispatch:
     inputs:
       logLevel:
