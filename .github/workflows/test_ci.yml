@@ -22,7 +22,6 @@ jobs:
       - run    : |
          cd $GITHUB_WORKSPACE
          python3 -m unittest test_tz2
-         exit 1
          
       - name: telegram bot
         if: ${{ success() }}
@@ -52,7 +51,7 @@ jobs:
 
             Изменения произошли в репозитории: ${{ github.repository }}
         
-            СТАТУС ТЕСТА ПОСЛЕ КОММИТА: ПРОВАЛ!
+            СТАТУС ТЕСТА ПОСЛЕ КОММИТА: ПРОВАЛ! 
 
             Посмотреть изменения: https://github.com/${{ github.repository }}/commit/${{github.sha}} 
          
