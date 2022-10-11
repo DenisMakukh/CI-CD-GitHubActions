@@ -28,6 +28,11 @@ jobs:
   runs-on: ubuntu-lastest
   needs: [test_my_code]  
   steps: 
+  - name   : Git-Clone-my-repo
+    uses   : actions/checkout@v3
+  - run    : |
+      cd $GITHUB_WORKSPACE
+      python3 -m unittest test_tz2
   - name: notifications
     uses: appleboy/telegram-action@master
     with:
