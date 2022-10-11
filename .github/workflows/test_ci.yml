@@ -22,7 +22,7 @@ jobs:
       - run    : |
          cd $GITHUB_WORKSPACE
          python3 -m unittest test_tz2
-     
+      
  telegram_bot:
   name: telegram_notify
   runs-on: ubuntu-lastest
