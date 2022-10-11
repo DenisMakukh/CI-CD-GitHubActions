@@ -22,33 +22,20 @@ jobs:
       - run    : |
          cd $GITHUB_WORKSPACE
          python3 -m unittest test_tz2
-      
- telegram_bot:
-  name: telegram_notify
-  runs-on: ubuntu-lastest
-  needs: [test_my_code]  
-  steps: 
-  - name   : Git-Clone-my-repo
-    uses   : actions/checkout@v3
-  - run    : |
-      cd $GITHUB_WORKSPACE
-      python3 -m unittest test_tz2
-  - name: notifications
-    uses: appleboy/telegram-action@master
-    with:
-     to: ${{ secrets.TELEGRAM_TO }}
-     token: ${{ secrets.TELEGRAM_TOKEN }}
-     message: |
-       ${{ github.actor }} создал коммит:
-          Были внесены изменения: ${{ github.event.commits[0].message }}
+         
+      - name: telegram bot
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ github.actor }} создал коммит:
+            Были внесены изменения: ${{ github.event.commits[0].message }}
 
-          Изменения произошли в репозитории: ${{ github.repository }}
-          
-          СТАТУС: УСПЕШНО!
+            Изменения произошли в репозитории: ${{ github.repository }}
 
-          Посмотреть изменения: https://github.com/DenisMakukh/tp-hse-2022-hw2
-    
-
+            Посмотреть изменения: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+ 
 
         
         
