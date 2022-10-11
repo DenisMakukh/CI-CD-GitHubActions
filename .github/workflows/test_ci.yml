@@ -22,6 +22,7 @@ jobs:
       - run    : |
          cd $GITHUB_WORKSPACE
          python3 -m unittest test_tz2
+         exit 1
          
       - name: telegram bot
         if: ${{ success() }}
