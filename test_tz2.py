@@ -1,7 +1,6 @@
 import unittest
 import tz2
-
-from functools import reduce
+from math import prod
 
 class Testing(unittest.TestCase):
     if len(tz2.sp1) != 0:
@@ -16,7 +15,7 @@ class Testing(unittest.TestCase):
             self.assertEqual(answer3, sum(tz2.sp1))
         def test_mult(self):
             answer4 = tz2._mult(tz2.sp1)
-            self.assertEqual(answer4, reduce((lambda x,y: x * y), tz2.sp1))
+            self.assertEqual(answer4, prod(tz2.sp1))
         def test_my(self):
             answer5 = tz2._max(tz2.sp1) * tz2._min(tz2.sp1)
             self.assertEqual(answer5, max(tz2.sp1) * min(tz2.sp1))
