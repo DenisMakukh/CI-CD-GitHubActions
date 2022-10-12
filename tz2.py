@@ -13,29 +13,57 @@ a = datetime.datetime.now()
 
 def _min(num):
     mini = 1000000^10000
-    for _ in range(len(num)):
-        if num[_] <= mini:
-            mini = num[_]
-    return mini
+    if len(num) != 0:
+        for _ in range(len(num)):
+            if num[_] <= mini:
+                mini = num[_]
+        return mini
+    else:
+        return None
 
 def _max(num):
     maxi = -(1000000^10000)
-    for j in range(len(num)):
-        if num[j] >= maxi:
-            maxi = num[j]
-    return maxi
+    if len(num) != 0:
+        for j in range(len(num)):
+            if num[j] >= maxi:
+                maxi = num[j]
+        return maxi
+    else:
+        return None
+
 
 def _sum(num):
     counter = 0
-    for i in num:
-        counter += i
-    return counter
+    if len(num) != 0:
+        for i in num:
+            counter += i
+        return counter
+    else:
+        return None
 
 def _mult(num):
     total = 1
-    for i in num:
-        total *= i
-    return total
+    if len(num) != 0:
+        for i in num:
+            total *= i
+        return total
+    else:
+        return None
+
+def minef(num):
+    if len(num) != 0:
+        maxi = -(1000000 ^ 10000)
+        for j in range(len(num)):
+            if num[j] >= maxi:
+                maxi = num[j]
+        mini = 1000000 ^ 10000
+        for _ in range(len(num)):
+            if num[_] <= mini:
+                mini = num[_]
+        return maxi*mini
+    else:
+        return None
+
 
 print('Минимальное:', _min(sp1))
 print('Максимальное:', _max(sp1))
