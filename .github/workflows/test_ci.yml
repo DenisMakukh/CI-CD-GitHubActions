@@ -1,33 +1,33 @@
 name: my-tests
 
 
-on:
-  push:
-  workflow_dispatch:
-    inputs:
-      logLevel:
+on                 :
+  push             :
+  workflow_dispatch: 
+    inputs         :
+      logLevel     :
         description: 'Log level'     
-        required: true
-        default: 'warning'
-      tags:
+        required   : true
+        default    : 'warning'
+      tags         :
         description: 'Test scenario tags'  
       
-jobs:
- test_my_code:
-    runs-on   : ubuntu-latest
+jobs             :
+ test_my_code    :
+    runs-on      : ubuntu-latest
     
-    steps     :
-      - name   : Git-Clone-my-repo
-        uses   : actions/checkout@v3
-      - run    : |
+    steps        :
+      - name     : Git-Clone-my-repo
+        uses     : actions/checkout@v3
+      - run      : |
          cd $GITHUB_WORKSPACE
          python3 -m unittest test_tz2
-      - name: telegram bot
-        if: ${{ success() }}
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+      - name     : telegram bot
+        if       : ${{ success() }}
+        uses     : appleboy/telegram-action@master
+        with     :
+          to     : ${{ secrets.TELEGRAM_TO }}
+          token  : ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             ${{ github.actor }} создал коммит:
             Были внесены изменения: ${{ github.event.commits[0].message }}
@@ -36,14 +36,16 @@ jobs:
         
             СТАТУС ТЕСТА ПОСЛЕ КОММИТА: УСПЕШНО!
 
-            Посмотреть изменения: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+            Посмотреть изменения: https://github.com/DenisMakukh/tp-hse-2022-hw2 
             
-      - name: telegram bot
-        if: ${{ failure() }}
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+            Просмотр коммитов только после автопризации.
+            
+      - name     : telegram bot
+        if       : ${{ failure() }}
+        uses     : appleboy/telegram-action@master
+        with     :
+          to     : ${{ secrets.TELEGRAM_TO }}
+          token  : ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             ${{ github.actor }} создал коммит:
             Были внесены изменения: ${{ github.event.commits[0].message }}
@@ -52,35 +54,6 @@ jobs:
         
             СТАТУС ТЕСТА ПОСЛЕ КОММИТА: ПРОВАЛ! Была обнаружена ошибка в тесте: test_my_code
 
-            Посмотреть изменения: https://github.com/${{ github.repository }}/commit/${{github.sha}} 
-         
-# telega1:
-#  runs-on: ubuntu-latest
-#  needs: [test_my_code]
-#  steps:
-#  - name: Git-Clone-my-repo
-#    uses: actions/checkout@v3
-#  - run: |
-#      cd $GITHUB_WORKSPACE
-#      python3 -m unittest test_tz2
-#      
-#  - name: telegram bot
-#    uses: appleboy/telegram-action@master
-#    with:
-#      to: ${{ secrets.TELEGRAM_TO }}
-#      token: ${{ secrets.TELEGRAM_TOKEN }}
-#      message: |
-#        ${{ github.actor }} создал коммит:
-#        Были внесены изменения: ${{ github.event.commits[0].message }}
-
-#        Изменения произошли в репозитории: ${{ github.repository }}
-        
-#        СТАТУС ТЕСТА ПОСЛЕ КОММИТА: УСПЕШНО!
-
-#        Посмотреть изменения: https://github.com/${{ github.repository }}/commit/${{github.sha}}
- 
-
-        
-        
-      
-    
+            Посмотреть изменения: https://github.com/DenisMakukh/tp-hse-2022-hw2 
+            
+            Просмотр коммитов только после автопризации.
