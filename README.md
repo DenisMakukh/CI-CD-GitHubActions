@@ -8,7 +8,7 @@
 
 ##### Ссылка на канал с телеграмм-ботом, оповещающий о результатах работы тестов GitHub Actions: https://t.me/+XnLpNQx2g6RjOTIy
 ##### Графики зависимости времени работы функций от количества чисел в файле:
- 
+  
 ![image](https://user-images.githubusercontent.com/114257585/194711279-b72b4905-e133-4573-a042-157251134415.png)
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Computer+science+student)](https://git.io/typing-svg)
  
